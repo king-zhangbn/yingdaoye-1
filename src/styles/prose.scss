@@ -33,7 +33,7 @@
   /* horizontal rule */
   @apply prose-hr:my-8 prose-hr:border-base-300/50 dark:prose-hr:border-base-600/50;
   /* table head */
-  @apply prose-thead:border-b-base-300 dark:prose-thead:border-b-base-600;
+  @apply prose-thead:border-b-base-300 dark:prose-thead:border-b-base-600/100;
   /* table row */
   @apply prose-tr:border-b-base-300/50 dark:prose-tr:border-b-base-600/50;
 }
@@ -78,3 +78,8 @@
   @apply mr-auto min-w-0 max-w-full;
 }
 /* end blog post markdown styling */
+
+
+
+
+

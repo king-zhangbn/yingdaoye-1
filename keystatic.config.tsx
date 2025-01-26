@@ -1,193 +1,197 @@
 /**
- * * This is the Keystatic configuration file. It is used to define the collections and fields that will be used in the Keystatic CMS.
+ * * 这是Keystatic配置文件。它用于定义将在Keystatic内容管理系统（CMS）中使用的集合和字段。
  *
- * ! This works in conjunction with Astro content collections. If you update one, you must update the other.
+ *! 这与Astro内容集合协同工作。如果更新其中一个，必须同时更新另一个。
  *
- * Access keystatic interface at /admin or /keystatic
- * This works in local mode in dev, then cloud mode in prod
- * Cloud deployment is free to sign up (up to 3 users per team)
- * Docs: https://keystatic.com/docs/cloud
- * Create a Keystatic Cloud account here: https://keystatic.cloud/
+ * 可通过 /admin 或 /keystatic 访问Keystatic界面
+ * 开发环境下以本地模式运行，生产环境下以云模式运行
+ * 云部署注册免费（每个团队最多3个用户）
+ * 文档：https://keystatic.com/docs/cloud
+ * 在此处创建Keystatic Cloud账户：https://keystatic.cloud/
  */
 
-import { config } from "@keystatic/core";
-import { collection, fields, singleton } from "@keystatic/core";
-
-export default config({
-	// works in local mode in dev, then cloud mode in prod
-	storage: import.meta.env.DEV === true ? { kind: "local" } : { kind: "cloud" },
-	// cloud deployment is free to sign up (up to 3 users per team)
-	// docs: https://keystatic.com/docs/cloud
-	// create a Keystatic Cloud account here: https://keystatic.cloud/
-	cloud: { project: "cosmic-themes/landingpad" },
-	ui: {
-		brand: { name: "Cosmic Themes" },
-	},
-	singletons: {
-		/**
-		 * * Bio and Config singleton
-		 * This gets used by Astro Content Collections, so if you update this, you'll need to update the Astro Content Collections schema
-		 */
-		config: singleton({
-			label: "Bio and Config",
-			path: `src/data/bio/`,
-			format: { contentField: "bio" },
-			schema: {
-				name: fields.text({
-					label: "Name",
-					validation: {
-						isRequired: true,
-					},
-				}),
-				bio: fields.mdx({
-					label: "Bio",
-					extension: "md", // force .md extension as we don't need mdx
-					options: {
-						bold: true,
-						italic: true,
-						strikethrough: true,
-						code: true,
-						heading: false,
-						blockquote: false,
-						orderedList: true,
-						unorderedList: true,
-						table: false,
-						link: true,
-						image: false,
-						divider: false,
-						codeBlock: false,
-					},
-				}),
-				theme: fields.select({
-					label: "Theme",
-					options: [
-						{ label: "Dark", value: "dark" },
-						{ label: "Light", value: "light" },
-					],
-					defaultValue: "dark",
-				}),
-				blur: fields.select({
-					label: "Blur",
-					options: [
-						{ label: "No blur", value: "no blur" },
-						{ label: "Blur", value: "blur" },
-					],
-					defaultValue: "no blur",
-				}),
-				avatar: fields.image({
-					label: "Avatar",
-					publicPath: "./",
-					validation: {
-						isRequired: true,
-					},
-				}),
-				background: fields.image({
-					label: "Background",
-					publicPath: "./",
-					validation: {
-						isRequired: true,
-					},
-				}),
-			},
-		}),
-	},
-
-	/**
-	 * * Socials collection
-	 * This gets used by Astro Content Collections, so if you update this, you'll need to update the Astro Content Collections schema
-	 */
-	collections: {
-		socials: collection({
-			label: "Socials",
-			path: `src/data/socials/*`,
-			columns: ["order"],
-			slugField: "title",
-			schema: {
-				title: fields.slug({
-					name: {
-						label: "Title",
-					},
-				}),
-				url: fields.text({
-					label: "URL",
-					validation: {
-						isRequired: true,
-					},
-				}),
-				order: fields.number({
-					label: "Order",
-					validation: {
-						isRequired: true,
-					},
-				}),
-				icon: fields.select({
-					label: "Icon",
-					options: [
-						{ label: "Github", value: "github" },
-						{ label: "Twitter", value: "twitter" },
-						{ label: "Bluesky", value: "bluesky" },
-						{ label: "Mastodon", value: "mastodon" },
-						{ label: "LinkedIn", value: "linkedin" },
-						{ label: "Instagram", value: "instagram" },
-						{ label: "Threads", value: "threads" },
-						{ label: "Facebook", value: "facebook" },
-						{ label: "YouTube", value: "youtube" },
-						{ label: "Twitch", value: "twitch" },
-						{ label: "TikTok", value: "tiktok" },
-						{ label: "Snapchat", value: "snapchat" },
-						{ label: "Reddit", value: "reddit" },
-						{ label: "Pinterest", value: "pinterest" },
-						{ label: "Medium", value: "medium" },
-						{ label: "Dev", value: "dev" },
-						{ label: "Dribbble", value: "dribbble" },
-						{ label: "Behance", value: "behance" },
-						{ label: "Codepen", value: "codepen" },
-						{ label: "Product Hunt", value: "producthunt" },
-						{ label: "Discord", value: "discord" },
-						{ label: "Slack", value: "slack" },
-						{ label: "WhatsApp", value: "whatsapp" },
-						{ label: "Telegram", value: "telegram" },
-						{ label: "Email", value: "email" },
-					],
-					defaultValue: "github",
-				}),
-			},
-		}),
-
-		/**
-		 * * Links collection
-		 * This gets used by Astro Content Collections, so if you update this, you'll need to update the Astro Content Collections schema
-		 */
-		links: collection({
-			label: "Links",
-			path: `src/data/links/*`,
-			columns: ["order"],
-			slugField: "title",
-			schema: {
-				title: fields.slug({
-					name: {
-						label: "Title",
-					},
-				}),
-				description: fields.text({
-					label: "Description",
-					validation: {
-						isRequired: true,
-					},
-				}),
-				url: fields.text({
-					label: "URL",
-					validation: {
-						isRequired: true,
-					},
-				}),
-				order: fields.number({
-					label: "Order",
-					validation: {
-						isRequired: true,
-					},
-				}),
-			},
-		}),
-	},
-});
+ import { config } from "@keystatic/core";
+ import { collection, fields, singleton } from "@keystatic/core";
+ 
+ export default config({
+	 // 开发环境下以本地模式运行，生产环境下以云模式运行
+	 storage: import.meta.env.DEV === true? { kind: "local" } : { kind: "cloud" },
+	 // 云部署注册免费（每个团队最多3个用户）
+	 // 文档：https://keystatic.com/docs/cloud
+	 // 在此处创建Keystatic Cloud账户：https://keystatic.cloud/
+	 cloud: {
+		 project: 'astro-stuzbn/yingdaoye-1',
+	 },
+	 ui: {
+		 brand: { name: "星落引导页设置" },
+	 },
+	 singletons: {
+		 /**
+		  * * 个人简介与配置单例
+		  * 此配置由Astro内容集合使用，因此如果更新此配置，需要同时更新Astro内容集合的架构
+		  */
+		 config: singleton({
+			 label: "个人简介与配置",
+			 path: `src/data/bio/`,
+			 format: { contentField: "bio" },
+			 schema: {
+				 name: fields.text({
+					 label: "姓名",
+					 validation: {
+						 isRequired: true,
+					 },
+				 }),
+				 bio: fields.mdx({
+					 label: "个人简介",
+					 extension: "md", // 强制使用.md 扩展名，因为我们不需要mdx
+					 options: {
+						 bold: true,
+						 italic: true,
+						 strikethrough: true,
+						 code: true,
+						 heading: false,
+						 blockquote: false,
+						 orderedList: true,
+						 unorderedList: true,
+						 table: false,
+						 link: true,
+						 image: false,
+						 divider: false,
+						 codeBlock: false,
+					 },
+				 }),
+				 theme: fields.select({
+					 label: "主题",
+					 options: [
+						 { label: "深色", value: "dark" },
+						 { label: "浅色", value: "light" },
+					 ],
+					 defaultValue: "dark",
+				 }),
+				 blur: fields.select({
+					 label: "模糊效果",
+					 options: [
+						 { label: "无模糊", value: "no blur" },
+						 { label: "模糊", value: "blur" },
+					 ],
+					 defaultValue: "no blur",
+				 }),
+				 avatar: fields.image({
+					 label: "头像",
+					 publicPath: "/src/data/bio",
+					 directory: "/src/data/bio",
+					 validation: {
+						 isRequired: true,
+					 },
+				 }),
+				 background: fields.image({
+					 label: "背景",
+					 publicPath: "/src/data/bio",
+					 directory: "/src/data/bio",
+					 validation: {
+						 isRequired: true,
+					 },
+				 }),
+			 },
+		 }),
+	 },
+ 
+	 /**
+	  * * 社交链接集合
+	  * 此配置由Astro内容集合使用，因此如果更新此配置，需要同时更新Astro内容集合的架构
+	  */
+	 collections: {
+		 socials: collection({
+			 label: "社交链接",
+			 path: `src/data/socials/*`,
+			 columns: ["order"],
+			 slugField: "title",
+			 schema: {
+				 title: fields.slug({
+					 name: {
+						 label: "标题",
+					 },
+				 }),
+				 url: fields.text({
+					 label: "链接",
+					 validation: {
+						 isRequired: true,
+					 },
+				 }),
+				 order: fields.number({
+					 label: "排序",
+					 validation: {
+						 isRequired: true,
+					 },
+				 }),
+				 icon: fields.select({
+					 label: "图标",
+					 options: [
+						 { label: "Github", value: "github" },
+						 { label: "Twitter", value: "twitter" },
+						 { label: "Bluesky", value: "bluesky" },
+						 { label: "Mastodon", value: "mastodon" },
+						 { label: "LinkedIn", value: "linkedin" },
+						 { label: "Instagram", value: "instagram" },
+						 { label: "Threads", value: "threads" },
+						 { label: "Facebook", value: "facebook" },
+						 { label: "YouTube", value: "youtube" },
+						 { label: "Twitch", value: "twitch" },
+						 { label: "TikTok", value: "tiktok" },
+						 { label: "Snapchat", value: "snapchat" },
+						 { label: "Reddit", value: "reddit" },
+						 { label: "Pinterest", value: "pinterest" },
+						 { label: "Medium", value: "medium" },
+						 { label: "Dev", value: "dev" },
+						 { label: "Dribbble", value: "dribbble" },
+						 { label: "Behance", value: "behance" },
+						 { label: "Codepen", value: "codepen" },
+						 { label: "Product Hunt", value: "producthunt" },
+						 { label: "Discord", value: "discord" },
+						 { label: "Slack", value: "slack" },
+						 { label: "WhatsApp", value: "whatsapp" },
+						 { label: "Telegram", value: "telegram" },
+						 { label: "Email", value: "email" },
+					 ],
+					 defaultValue: "github",
+				 }),
+			 },
+		 }),
+ 
+		 /**
+		  * * 其他链接集合
+		  * 此配置由Astro内容集合使用，因此如果更新此配置，需要同时更新Astro内容集合的架构
+		  */
+		 links: collection({
+			 label: "其他链接",
+			 path: `src/data/links/*`,
+			 columns: ["order"],
+			 slugField: "title",
+			 schema: {
+				 title: fields.slug({
+					 name: {
+						 label: "标题",
+					 },
+				 }),
+				 description: fields.text({
+					 label: "描述",
+					 validation: {
+						 isRequired: true,
+					 },
+				 }),
+				 url: fields.text({
+					 label: "链接",
+					 validation: {
+						 isRequired: true,
+					 },
+				 }),
+				 order: fields.number({
+					 label: "排序",
+					 validation: {
+						 isRequired: true,
+					 },
+				 }),
+			 },
+		 }),
+	 },
+ });

@@ -30,7 +30,7 @@ module.exports = {
           dark: {
             DEFAULT: colors.neutral[900],
             text: colors.neutral[200],
-            hover: colors.neutral[800],
+            hover: colors.neutral[800/50],
           },
         },
       },
