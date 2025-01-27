@@ -3,7 +3,7 @@ name: Xingluo
 theme: dark
 blur: blur
 avatar: /src/data/bio/avatar.webp
-background: /src/data/bio/background.jpg
+background: /src/data/bio/background.png
 ---
 ***Student / Photographer / Designer***
 
