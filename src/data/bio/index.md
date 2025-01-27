@@ -1,7 +1,7 @@
 ---
 name: Xingluo
 theme: light
-blur: blur
+blur: no blur
 avatar: /src/data/bio/avatar.webp
 background: /src/data/bio/background.png
 ---
