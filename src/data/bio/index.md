@@ -1,6 +1,6 @@
 ---
 name: Xingluo
-theme: dark
+theme: light
 blur: blur
 avatar: /src/data/bio/avatar.webp
 background: /src/data/bio/background.png
