@@ -19,7 +19,7 @@ export default defineConfig({
   },
 
   prefetch: true,
-  output: 'static',
+  output: 'server',
 
   image: {
     service: sharpImageService(),
