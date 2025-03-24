@@ -1,60 +1,129 @@
-# Welcome to Landing Pad 🚀
+# cojocarudavid.me
 
-This is a free theme for Astro created by [Cosmic Themes](https://cosmicthemes.com/). It is a great place to house links to your various projects and socials.
+![Build Status](https://img.shields.io/github/actions/workflow/status/cojocaru-david/cojocarudavid.me/ci.yml)
+![License](https://img.shields.io/github/license/cojocaru-david/cojocarudavid.me)
+![Version](https://img.shields.io/github/package-json/v/cojocaru-david/cojocarudavid.me)
+![Stars](https://img.shields.io/github/stars/cojocaru-david/cojocarudavid.me?style=social)
 
-[website demo](https://landingpad.cosmicthemes.com/)
+👋 Hi, I'm **David**, a 17-year-old coder from Romania. 🚀 Passionate about web development with **JavaScript, PHP, and React**. Linux enthusiast automating tasks with Bash.
 
-## Quickstart
+---
 
-1. Fork this project to your own repository, and clone it to your local machine
-2. Install all necessary packages with `npm install`
-3. Run `npm run dev` to start the dev server
-   - By default, it will be available at `localhost:4321`
-4. Edit the content either with Keystatic CMS at `localhost:4321/admin` or by editing the markdown files in `src/data/`
-   - There's also an "Admin Dashboard" button you'll see in the demo that will take you to the CMS editor
-5. Update the colors if desired in `tailwind.config.cjs`, or any other code to adjust the looks
-6. Update the site URL in `astro.config.mjs` and `/public/robots.txt` to match your domain
-7. After you're happy, update your changes to your repo and [deploy to Netlify, Vercel, Cloudflare](https://cosmicthemes.com/deployment/), or other provider of your choice
+## 🚀 Project Overview
 
-## Features
+**cojocarudavid.me** is my **personal portfolio website**, built with **Astro.js** and styled using **Tailwind CSS**. It serves as a hub for my projects, blog posts, and personal updates.
 
-- A production-ready landing page inspired by linktree, made to be hosted as a static site
-- Optional Keystatic CMS integration for editing content
-- Built-in image optimiation using `astro:assets`
-- Tailwind CSS for styling
+![Website Screenshot](.github/image.png)
 
-## Other Resources
+---
 
-- See my blog post on [recommended Astro web development setup](https://cosmicthemes.com/blog/astro-web-development-setup/).
-- You can learn more information from the [theme docs](https://cosmicthemes.com/docs/) pages.
+## 🌟 Features
 
-## License
+✅ **Blazing fast** - Optimized for performance and SEO.  
+🎨 **Modern & responsive** - Tailwind CSS for easy customization.  
+🔒 **Secure & reliable** - Follows best security practices.  
+📱 **Mobile-friendly** - Fully responsive across devices.  
+📝 **Blog support** - Share insights and experiences.
 
-This project is open source and available under the [GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
+---
 
-However, If you have purchased [All Access](https://cosmicthemes.com/all-access/) from Cosmic Themes, there is a no attribution required license you can view at [License details](https://cosmicthemes.com/license/).
+## 🛠️ Tech Stack
 
-## General Astro Info
+- **[Astro.js](https://astro.build/)** - Static site generator.
+- **[React.js](https://reactjs.org/)** - Used for components.
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework.
+- **[TypeScript](https://www.typescriptlang.org/)** - Typed JavaScript at scale.
+- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** - Core language.
+- **[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)** - Styles and layouts.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📚 Setup & Installation
 
-Any static assets, like images, can be placed in the `public/` directory. I also frequently use `src/assets` for images when using Astro asssets for image optimization.
+### Prerequisites
 
-### Commands
+Ensure you have the following installed:
 
-All commands are run from the root of the project, from a terminal:
+- [Node.js](https://nodejs.org/) and npm.
+- [Git](https://git-scm.com/).
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Installation Steps
 
-### Want to learn more?
+1. **Clone the repository:**
 
-Feel free to check out the [Astro documentation](https://docs.astro.build).
+   ```sh
+   git clone https://github.com/cojocaru-david/cojocarudavid.me.git
+   ```
+
+2. **Navigate to the project directory:**
+
+   ```sh
+   cd cojocarudavid.me
+   ```
+
+3. **Install dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+4. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+
+---
+
+## 🎯 Usage
+
+### Development Mode
+
+Run the local development server:
+
+```sh
+npm run dev
+```
+
+### Production Build
+
+Generate a production-ready build:
+
+```sh
+npm run build
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow the [contributing guidelines](CONTRIBUTING.md) before submitting changes.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 💬 Contact
+
+📧 Email: [contact@cojocarudavid.me](mailto:contact@cojocarudavid.me)
+
+### 🌐 Connect with Me
+
+- [LinkedIn](https://www.linkedin.com/in/cojocaru-david)
+- [Blog](https://cojocarudavid.me/blog)
+
+---
+
+## ⭐ Show Your Support
+
+If you like this project, give it a ⭐ on GitHub!
+
+---
+
+## 🙏 Acknowledgments
+
+- [Astro.js](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)

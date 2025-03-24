@@ -1,1 +1,4 @@
-Sitemap: https://landingpad.cosmicthemes.com/sitemap-index.xml
+Sitemap: https://cojocarudavid.me/sitemap-index.xml
+
+User-agent: *
+Allow: /

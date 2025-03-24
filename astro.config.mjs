@@ -1,33 +1,25 @@
-import { defineConfig } from "astro/config";
-import react from "@astrojs/react";
-import keystatic from "@keystatic/astro";
-// import netlify from "@astrojs/netlify";
-import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
-import compress from "@playform/compress";
+// @ts-check
+import { defineConfig, sharpImageService } from "astro/config";
 
-import vercel from "@astrojs/vercel";
+import tailwindcss from "@tailwindcss/vite";
+import icon from "astro-icon";
+import sitemap from "@astrojs/sitemap";
+
+import react from "@astrojs/react";
+
+import markdoc from "@astrojs/markdoc";
+import keystatic from '@keystatic/astro'
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://en.icu",
-	adapter: vercel({	
-		imageCDN: false,
-	}),
-	redirects: {
-		"/admin": "/keystatic",
-	},
-	integrations: [
-		react(),
-		keystatic(),
-		tailwind(),	
-		sitemap(),
-		compress({
-			HTML: true,
-			JavaScript: true,
-			CSS: true,
-			Image: false, // astro:assets handles this. Enabling this can dramatically increase build times
-			SVG: false, // astro-icon handles this
-		}),
-	],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  prefetch: true,
+  output: 'static',
+  image: {
+    service: sharpImageService(),
+  },
+  site: "https://cojocarudavid.me",
+  integrations: [icon(), sitemap(), react(), markdoc(), keystatic()],
 });

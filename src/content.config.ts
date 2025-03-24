@@ -1,66 +1,32 @@
-import { z, defineCollection } from "astro:content";
-import { glob, file } from "astro/loaders";
+import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
-const bioCollection = defineCollection({
-	loader: glob({ pattern: "**/[^_]*{md,mdx}", base: "./src/data/bio" }),
-	schema: ({ image }) =>
-		z.object({
-			name: z.string(),
-			theme: z.enum(["dark", "light"]),
-			blur: z.enum(["no blur", "blur"]),
-			avatar: image(),
-			background: image(),
-		}),
+const blog = defineCollection({
+  loader: glob({ pattern: "*.{md,mdx}", base: "src/posts" }),
+  schema: ({ image }: { image: () => z.ZodType<any> }) =>
+    z.object({
+      title: z.string().max(80).min(10),
+      slug: z.string(),
+      hero: image(),
+      heroAlt: z.string(),
+      description: z.string().max(220).min(1),
+      pubDate: z.date(),
+      updatedDate: z.date().optional(),
+      tags: z.array(z.string()),
+    }),
 });
 
-const socialsCollection = defineCollection({
-	loader: glob({ pattern: "**/[^_]*.{yml,yaml}", base: "./src/data/socials" }),
-	schema: z.object({
-		title: z.string(),
-		url: z.string(),
-		order: z.number(),
-		icon: z.enum([
-			"github",
-			"twitter",
-			"bluesky",
-			"mastodon",
-			"linkedin",
-			"instagram",
-			"threads",
-			"facebook",
-			"youtube",
-			"twitch",
-			"tiktok",
-			"snapchat",
-			"reddit",
-			"pinterest",
-			"medium",
-			"dev",
-			"dribbble",
-			"behance",
-			"codepen",
-			"producthunt",
-			"discord",
-			"slack",
-			"whatsapp",
-			"telegram",
-			"email",
-		]),
-	}),
-});
+export const collections = { 
+  blog,
+  // projects: projectsCollection
+ };
 
-const linksCollection = defineCollection({
-	loader: glob({ pattern: "**/[^_]*.{yml,yaml}", base: "./src/data/links" }),
-	schema: z.object({
-		title: z.string(),
-		description: z.string().optional(),
-		url: z.string(),
-		order: z.number(),
-	}),
-});
-
-export const collections = {
-	socials: socialsCollection,
-	bio: bioCollection,
-	links: linksCollection,
-};
+// const projectsCollection = defineCollection({
+// 	loader: glob({ pattern: "**/[^_]*.{yml,yaml}", base: "./src/data/projects" }),
+// 	schema: z.object({
+// 		title: z.string(),
+// 		description: z.string().optional(),
+// 		url: z.string(),
+// 		order: z.number(),
+// 	}),
+// });
