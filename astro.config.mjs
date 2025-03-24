@@ -10,7 +10,11 @@ import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from '@keystatic/astro'
 
-import vercel from "@astrojs/vercel";
+
+
+import netlify from "@astrojs/netlify";
+
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,13 +23,12 @@ export default defineConfig({
   },
 
   prefetch: true,
-  output: 'server',
 
   image: {
     service: sharpImageService(),
   },
 
-  site: "https://cojocarudavid.me",
+  site: "https://en.icu",
   integrations: [icon(), sitemap(), react(), markdoc(), keystatic()],
-  adapter: vercel(),
+  adapter: netlify(),
 });

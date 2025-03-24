@@ -10,7 +10,10 @@ importers:
     dependencies:
       '@astrojs/markdoc':
         specifier: ^0.13.1
-        version: 0.13.1(@types/react@19.0.12)(astro@5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react@19.0.0)
+        version: 0.13.1(@types/react@19.0.12)(astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react@19.0.0)
+      '@astrojs/netlify':
+        specifier: ^6.2.3
+        version: 6.2.3(@types/node@22.13.10)(astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)
       '@astrojs/react':
         specifier: ^4.2.1
         version: 4.2.1(@types/node@22.13.10)(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(jiti@2.4.2)(lightningcss@1.29.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -22,7 +25,7 @@ importers:
         version: 3.3.0
       '@astrojs/vercel':
         specifier: ^8.0.4
-        version: 8.1.3(astro@5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react@19.0.0)(rollup@4.36.0)
+        version: 8.1.3(astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react@19.0.0)(rollup@4.36.0)
       '@fontsource-variable/montserrat':
         specifier: ^5.2.5
         version: 5.2.5
@@ -37,7 +40,7 @@ importers:
         version: 1.2.29
       '@keystatic/astro':
         specifier: ^5.0.6
-        version: 5.0.6(@keystatic/core@0.5.46(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(astro@5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 5.0.6(@keystatic/core@0.5.46(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@keystatic/core':
         specifier: ^0.5.46
         version: 0.5.46(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -52,7 +55,7 @@ importers:
         version: 19.0.4(@types/react@19.0.12)
       astro:
         specifier: ^5.5.3
-        version: 5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
+        version: 5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -141,6 +144,11 @@ packages:
   '@astrojs/markdown-remark@6.3.1':
     resolution: {integrity: sha512-c5F5gGrkczUaTVgmMW9g1YMJGzOtRvjjhw6IfGuxarM6ct09MpwysP10US729dy07gg8y+ofVifezvP3BNsWZg==}
 
+  '@astrojs/netlify@6.2.3':
+    resolution: {integrity: sha512-QWSvoECD1ctC8N376TICRrc6F6XyyRiW3L9G1Z37B6o5BmMBXlkwsk9cMboDLbLqhcxR3RHBHXJYZ4rgjQDvQA==}
+    peerDependencies:
+      astro: ^5.3.0
+
   '@astrojs/prism@3.2.0':
     resolution: {integrity: sha512-GilTHKGCW6HMq7y3BUv9Ac7GMe/MO9gi9GW62GzKtth0SwukCu/qp2wLiGpEujhY+VVhaG9v7kv/5vFzvf4NYw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
@@ -163,6 +171,9 @@ packages:
   '@astrojs/telemetry@3.2.0':
     resolution: {integrity: sha512-wxhSKRfKugLwLlr4OFfcqovk+LIFtKwLyGPqMsv+9/ibqqnW3Gv7tBhtKEb0gAyUAC4G9BTVQeQahqnQAhd6IQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
+
+  '@astrojs/underscore-redirects@0.6.0':
+    resolution: {integrity: sha512-dnJgFpaM955IFNIkEEmMaaIdWXRdeZs1ID6mlGBqdjh6NiCXfKmOdq7L4fd9Dd/tr18fkLrOJ25IUJSxRAEhjQ==}
 
   '@astrojs/vercel@8.1.3':
     resolution: {integrity: sha512-mHO28cc0FQbA6ncFteW5Hqf2l0gSthPNF8/dpM1sQAOD92Mbyi93/4EhTYj07Xhi3t37FU4tPtzyQoCAn4P4Kg==}
@@ -701,6 +712,18 @@ packages:
         optional: true
       react:
         optional: true
+
+  '@netlify/blobs@8.1.1':
+    resolution: {integrity: sha512-7Dg3PzArvQ0Owq4wpkLECC9iaDBOxuWUN2uwbQtUF6tZssyez2QN+eO0CjuIhhZUivbw+X9bwsyiEjWkdJnv/A==}
+    engines: {node: ^14.16.0 || >=16.0.0}
+
+  '@netlify/functions@3.0.4':
+    resolution: {integrity: sha512-Ox8+ABI+nsLK+c4/oC5dpquXuEIjzfTlJrdQKgQijCsDQoje7inXFAtKDLvvaGvuvE+PVpMLwQcIUL6P9Ob1hQ==}
+    engines: {node: '>=18.0.0'}
+
+  '@netlify/serverless-functions-api@1.36.0':
+    resolution: {integrity: sha512-z6okREyK8in0486a22Oro0k+YsuyEjDXJt46FpgeOgXqKJ9ElM8QPll0iuLBkpbH33ENiNbIPLd1cuClRQnhiw==}
+    engines: {node: '>=18.0.0'}
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -3777,13 +3800,13 @@ snapshots:
 
   '@astrojs/internal-helpers@0.6.1': {}
 
-  '@astrojs/markdoc@0.13.1(@types/react@19.0.12)(astro@5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react@19.0.0)':
+  '@astrojs/markdoc@0.13.1(@types/react@19.0.12)(astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react@19.0.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
       '@astrojs/markdown-remark': 6.3.1
       '@astrojs/prism': 3.2.0
       '@markdoc/markdoc': 0.5.1(@types/react@19.0.12)(react@19.0.0)
-      astro: 5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
+      astro: 5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
       esbuild: 0.25.1
       github-slugger: 2.0.0
       htmlparser2: 10.0.0
@@ -3817,6 +3840,33 @@ snapshots:
       vfile: 6.0.3
     transitivePeerDependencies:
       - supports-color
+
+  '@astrojs/netlify@6.2.3(@types/node@22.13.10)(astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)':
+    dependencies:
+      '@astrojs/internal-helpers': 0.6.1
+      '@astrojs/underscore-redirects': 0.6.0
+      '@netlify/blobs': 8.1.1
+      '@netlify/functions': 3.0.4
+      '@vercel/nft': 0.29.2(rollup@4.36.0)
+      astro: 5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
+      esbuild: 0.25.1
+      tinyglobby: 0.2.12
+      vite: 6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)
+    transitivePeerDependencies:
+      - '@types/node'
+      - encoding
+      - jiti
+      - less
+      - lightningcss
+      - rollup
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
 
   '@astrojs/prism@3.2.0':
     dependencies:
@@ -3868,14 +3918,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@8.1.3(astro@5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react@19.0.0)(rollup@4.36.0)':
+  '@astrojs/underscore-redirects@0.6.0': {}
+
+  '@astrojs/vercel@8.1.3(astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react@19.0.0)(rollup@4.36.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
       '@vercel/analytics': 1.5.0(react@19.0.0)
       '@vercel/edge': 1.2.1
       '@vercel/nft': 0.29.2(rollup@4.36.0)
       '@vercel/routing-utils': 5.0.4
-      astro: 5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
+      astro: 5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
       esbuild: 0.25.1
       tinyglobby: 0.2.12
     transitivePeerDependencies:
@@ -4462,12 +4514,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@keystatic/astro@5.0.6(@keystatic/core@0.5.46(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(astro@5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@keystatic/astro@5.0.6(@keystatic/core@0.5.46(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@babel/runtime': 7.26.10
       '@keystatic/core': 0.5.46(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@types/react': 19.0.12
-      astro: 5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
+      astro: 5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       set-cookie-parser: 2.7.1
@@ -4575,6 +4627,14 @@ snapshots:
       '@types/markdown-it': 12.2.3
       '@types/react': 19.0.12
       react: 19.0.0
+
+  '@netlify/blobs@8.1.1': {}
+
+  '@netlify/functions@3.0.4':
+    dependencies:
+      '@netlify/serverless-functions-api': 1.36.0
+
+  '@netlify/serverless-functions-api@1.36.0': {}
 
   '@oslojs/encoding@1.1.0': {}
 
@@ -5990,7 +6050,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@5.5.3(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2):
+  astro@5.5.3(@netlify/blobs@8.1.1)(@types/node@22.13.10)(idb-keyval@6.2.1)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -6040,7 +6100,7 @@ snapshots:
       tsconfck: 3.1.5(typescript@5.8.2)
       ultrahtml: 1.5.3
       unist-util-visit: 5.0.0
-      unstorage: 1.15.0(idb-keyval@6.2.1)
+      unstorage: 1.15.0(@netlify/blobs@8.1.1)(idb-keyval@6.2.1)
       vfile: 6.0.3
       vite: 6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)
       vitefu: 1.0.6(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2))
@@ -8170,7 +8230,7 @@ snapshots:
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
 
-  unstorage@1.15.0(idb-keyval@6.2.1):
+  unstorage@1.15.0(@netlify/blobs@8.1.1)(idb-keyval@6.2.1):
     dependencies:
       anymatch: 3.1.3
       chokidar: 4.0.3
@@ -8181,6 +8241,7 @@ snapshots:
       ofetch: 1.4.1
       ufo: 1.5.4
     optionalDependencies:
+      '@netlify/blobs': 8.1.1
       idb-keyval: 6.2.1
 
   update-browserslist-db@1.1.3(browserslist@4.24.4):
