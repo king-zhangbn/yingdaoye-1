@@ -10,16 +10,22 @@ import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from '@keystatic/astro'
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
   prefetch: true,
   output: 'static',
+
   image: {
     service: sharpImageService(),
   },
+
   site: "https://cojocarudavid.me",
   integrations: [icon(), sitemap(), react(), markdoc(), keystatic()],
+  adapter: vercel(),
 });
